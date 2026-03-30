@@ -1,0 +1,15 @@
+# (x, y)
+10 10
+# S, E
+90 53
+# (0, 0) is bottom left
+m m m m m m m m . .
+m m m m m m m m m .
+m m m m m m m m m .
+m m . . . . m m . .
+m m X X X . m m . .
+. . X . X . . . . .
+. . X . . m m m m m
+. . X X X ~ ~ ~ ~ ~
+. m ~ ~ ~ ~ ~ ~ ~ ~
+. m ~ ~ ~ ~ ~ ~ ~ ~
