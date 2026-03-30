@@ -1,14 +1,16 @@
 #include "Application.h"
+#include "fmt/base.h"
 #include "raylib.h"
 
 namespace path_finding {
 
 Application::Application(
     const std::string_view &title, World::CellTypeMap &&cell_types,
-    int window_size
+    const std::string_view &map_path, int window_size
 )
-    : window_size_(window_size), board_(std::move(cell_types))
+    : window_size_(window_size), world_(std::move(cell_types))
 {
+    SetTraceLogLevel(LOG_WARNING);
     InitWindow(window_size_, window_size_, title.data());
     if (window_size_ == 1) {
         int monitor_width = GetMonitorWidth(0);
@@ -21,6 +23,10 @@ Application::Application(
         );
     }
     SetTargetFPS(60);
+
+    if (world_.loadMapFromSource(map_path)) {
+        fmt::println("Failed to load map from path '{}'", map_path);
+    }
 }
 
 Application::~Application()

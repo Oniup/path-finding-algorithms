@@ -1,8 +1,6 @@
 #ifndef _PATH_FINDING_SPARSE_GRAPH_H_
 #define _PATH_FINDING_SPARSE_GRAPH_H_
 
-#include <memory>
-
 namespace path_finding {
 
 struct Node {

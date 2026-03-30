@@ -9,7 +9,7 @@ class Application {
 public:
     Application(
         const std::string_view &title, World::CellTypeMap &&cell_types,
-        int window_size = 1
+        const std::string_view &map_path, int window_size = 1
     );
     ~Application();
 
@@ -19,12 +19,12 @@ public:
     void render();
 
     inline int getWindowSize() const { return window_size_; }
-    const World &getWorld() const { return board_; }
-    World &getWorld() { return board_; }
+    const World &getWorld() const { return world_; }
+    World &getWorld() { return world_; }
 
 private:
     int window_size_;
-    World board_;
+    World world_;
 };
 
 } // namespace path_finding

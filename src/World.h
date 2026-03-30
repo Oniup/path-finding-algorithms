@@ -54,7 +54,7 @@ public:
     World(CellTypeMap cell_type);
 
 public:
-    bool loadFromMap(const std::string_view &path);
+    bool loadMapFromSource(const std::string_view &path);
 
     Cell getCell(int x, int y) const;
     void changeCellType(int x, int y, CellInfo::Type type);
